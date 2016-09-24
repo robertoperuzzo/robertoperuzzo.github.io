@@ -134,9 +134,9 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll
   jekyll-feed
   jekyll-paginate
+  minima
 
 RUBY VERSION
    ruby 2.0.0p648
