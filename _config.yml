@@ -17,7 +17,7 @@ email_username: hi@robertoperuzzo.it
 
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
-# google_tracking_id:
+google_tracking_id: UA-5332217-14
 
 # Build settings
 markdown: kramdown
