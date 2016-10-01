@@ -12,24 +12,18 @@ tags:       drupal mailchimp development
   di produzione, sta sicuro l'inghippo sta dietro l'angolo. L'ideale sarebbe di
   poter sempre lavorare con strumenti e piattaforme che ti permettono
   di avere ambienti allineati in modo da minimizzare al massimo eventuali
-  problemi in fase di rilascio. Ma non sempre è così, soprattutto quando
-  il cliente ha già il suo hosting o i suoi server dedicati.</p>
-<p></p>
+  problemi in fase di rilascio. Ma non sempre è così, soprattutto quando,
+  come in questo caso, il cliente ha già il suo hosting o i suoi server dedicati.</p>
 
-  rifiutare a piccoli progetti per riuscire a sbarcare il lunario; quindi consapevole
-  del rischio, mi son lanciato a capofitto per sviluppare quanto richiesto nel più
-  breve tempo possibile (avrete già intuito che il budget per il lavoro era pari
-  al caffé ristretto che mi son bevuto stamattina). Dimenticavo... si tratta
-  di un sito web in Drupal.</p>
-
-<p>Ieri, una volta caricato il tutto nell'ambiente di produzione, ecco apparire
-  quel fastidioso messaggio <strong>Fatal error</strong>. Bene... dopo la
-  solita imprecazione di circostanza, si parte a debuggure.</p>
+<p>Ieri, dopo aver caricato tutto il lavoro nell'ambiente di produzione, ecco apparire
+  quel fastidioso messaggio <strong>Fatal error</strong>. Bene... si parte
+  con il debugging motivato dalla solita imprecazione di circostanza.</p>
 
 <p>Il messaggio che appare caricando l'homepage non l'ho mai visto prima<br>
   <pre><code>Fatal error: Call to undefined function GuzzleHttp\Handler\curl_reset() in /home/powell/public_html/sites/all/libraries/mailchimp/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 78</code></pre><br>
-  e la cosa non mi piace, perché è sinonimo di "da questa sedia non ti alzerai"
-  per le prossime due ore. Per fortuna invece, ho trovato
+  e la cosa non mi piace, perché è sinonimo di "da questa sedia non ti alzerai
+  per le prossime due ore" (tradotto significa "cena fredda e disappunto della
+  mia cara moglie"). Per fortuna, a seguito di una veloce ricerca, ho trovato
   <a href="https://www.drupal.org/node/2709615#comment-11129049" target="_blank">questa
     segnalazione nel progetto Mailchimp</a> che mi ha dato il <em>LA</em> per
     risolvere il problema.</p>
