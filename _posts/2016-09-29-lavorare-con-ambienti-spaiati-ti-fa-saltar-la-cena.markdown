@@ -1,10 +1,11 @@
 ---
 layout:     post
 title:      "Errore curl_reset su Mailchimp per Drupal"
-subtitle:   "Lavorare con ambienti 'spaiati' ti fa saltar la cena"
+subtitle:   "Lavorare con ambienti 'spaiati' ti fa saltar la cena."
 date:       2016-09-29 12:00:00
 author:     "Roberto Peruzzo"
 header-img: "img/2016-09-29/hero-mailchimp.png"
+tags:       drupal mailchimp development
 ---
 
 <p>Quando l'ambiente dove sviluppi non ha le stesse cofingurazioni di quello
