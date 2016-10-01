@@ -374,6 +374,7 @@ form .row:first-child .floating-label-form-group {
 }
 .pager li > span {
   background-color: #eee;
+  color: #808080;
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,
