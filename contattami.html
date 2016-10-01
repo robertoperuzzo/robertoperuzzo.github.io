@@ -5,10 +5,44 @@ description: "Chiedere è lecito, rispondere è cortesia."
 header-img: "img/contact-bg.jpg"
 ---
 
-<p>Se sei arrivato a questa pagina significa che sei interessato a quello che
-faccio e condividi la mia stessa filosofia lavorativa per realizzare progetti web di successo.</p>
-<p>Il modo più semplice per contattarmi è scrivermi un email</p>
-<h2><span class="label label-success">info@robertoperuzzo.it</span></h2>
-<p>MaSono presente anche sui vari canali digitali come puoi vedere la lista di
-icone presenti ai piedi di questa pagina. Su facebook </p>
+<p>Vuoi collaborare con me perché stai cercando un professionista con
+  <a href="{{ "/about/#cosa-faccio" | prepend: site.baseurl }}">le mie competenze</a>?
+  Condividi la mia stessa <a href="{{ "/about/#come-lo-faccio" | prepend: site.baseurl }}">filosofia lavorativa</a>
+  per realizzare progetti web di successo? Vuoi conoscere i vantaggi delle
+  <a href="{{ "/about/#tecnologie-che-utilizzo" | prepend: site.baseurl }}">tecnologie che utilizzo</a>?
+  Oppure hai bisogno di un
+  <a href="{{ "/about/#cosa-non-so-fare" | prepend: site.baseurl }}">team di professionisti</a>
+  per realizzare il tuo progetto?
+</p>
+<p>Il modo più semplice per farlo è scrivendomi un email</p>
+<h2><a class="btn btn-primary btn-lg" href="mailto:{{ site.email_username }}">{{ site.email_username }}</a></h2>
+<p>Se prima però vuoi conoscermi meglio, puoi seguire i miei profili digitali:</p>
+<ul>
+  {% if site.linkedin_username %}
+  <li>
+      <strong><a href="https://it.linkedin.com/in/{{ site.linkedin_username }}" target="_blank">
+          Linkedin</a></strong>, il mio curriculum professionale. Se non ci conosciamo, dimmi perché
+      dovremmo entrare in contatto.
+  </li>
+  {% endif %}
+  {% if site.facebook_username %}
+  <li>
+      <strong><a href="https://www.facebook.com/{{ site.facebook_username }} target="_blank"">
+          Facebook</a></strong>, la vita di tutti i giorni. Seguimi e poi decidiamo se diventare amici.
+  </li>
+  {% endif %}
+  {% if site.twitter_username %}
+  <li>
+      <strong><a href="https://twitter.com/{{ site.twitter_username }} target="_blank"">
+          Twitter</a></strong>, tutto ciò che è legato alla programmazione.
+  </li>
+  {% endif %}
+  {% if site.github_username %}
+  <li>
+      <strong><a href="https://github.com/{{ site.github_username }} target="_blank"">
+          Github</a></strong>, la mia cassetta degli attrezzi che riempirò di giorno in giorno
+      con frammenti di codice e progetti open source.
+  </li>
+  {% endif %}
+</ul>
 

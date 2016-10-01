@@ -1,19 +1,19 @@
 # Site settings
 title: Roberto Peruzzo
 header-img: img/home-bg.jpg
-email: hi@robertoperuzzo.it
+email: info@robertoperuzzo.it
 copyright_name: Roberto Peruzzo
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Web developer freelance, artigiano del codice, sostenitore della filosofia
+  open source e Drupal addicted. Collaboro con aziende, agenzie e altri
+  freelance creando software per un web sostenibile.
 baseurl: ""
-url: "http://robertoperuzzo.github.io"
+url: "http://robertoperuzzo.it"
 linkedin_username: robertoperuzzo
 twitter_username: robertoperuzzo
 github_username: robertoperuzzo
 facebook_username: peruzzo.roberto
-email_username: hi@robertoperuzzo.it
+email_username: info@robertoperuzzo.it
 
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
