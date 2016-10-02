@@ -27,21 +27,27 @@ header-img: "img/contact-bg.jpg"
   {% endif %}
   {% if site.facebook_username %}
   <li>
-      <strong><a href="https://www.facebook.com/{{ site.facebook_username }} target="_blank"">
+      <strong><a href="https://www.facebook.com/{{ site.facebook_username }}" target="_blank">
           Facebook</a></strong>, la vita di tutti i giorni. Seguimi e poi decidiamo se diventare amici.
   </li>
   {% endif %}
   {% if site.twitter_username %}
   <li>
-      <strong><a href="https://twitter.com/{{ site.twitter_username }} target="_blank"">
+      <strong><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">
           Twitter</a></strong>, tutto ciò che è legato alla programmazione.
   </li>
   {% endif %}
   {% if site.github_username %}
   <li>
-      <strong><a href="https://github.com/{{ site.github_username }} target="_blank"">
+      <strong><a href="https://github.com/{{ site.github_username }}" target="_blank">
           Github</a></strong>, la mia cassetta degli attrezzi che riempirò di giorno in giorno
       con frammenti di codice e progetti open source.
+  </li>
+  {% endif %}
+  {% if site.slideshare_username %}
+  <li>
+      <strong><a href="https://www.slideshare.net{{ site.slideshare_username }}" target="_blank">
+          Slideshare</a></strong>, dove puoi trovare le mie presentazioni e pubblicazioni.
   </li>
   {% endif %}
 </ul>
