@@ -2,7 +2,7 @@
 layout:     post
 title:      "Drupal Commerce e il modulo Field Permission"
 subtitle:   "Il problema dei locked fields"
-date:       2016-09-29 12:00:00
+date:       2013-11-21 12:00:00
 author:     "Roberto Peruzzo"
 header-img: "img/2013-11-21/fields_permission.jpg"
 tags:       drupal drupalcommerce field_permission
