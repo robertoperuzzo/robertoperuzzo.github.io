@@ -2,7 +2,7 @@
 layout:     post
 title:      "Paginated Scan on DynamoDB"
 subtitle:   "Il nuovo servizio NoSQL Database offerto da Amazon."
-date:       2012-02-13 12:43:00
+date:       2012-04-11 12:43:00
 author:     "Roberto Peruzzo"
 tags:       java aws dynamodb amazon
 ---
