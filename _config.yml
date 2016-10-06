@@ -1,5 +1,6 @@
 # Site settings
 title: Roberto Peruzzo
+seo_title: Roberto Peruzzo - Freelance Web Developer
 header-img: img/home-bg.jpg
 email: info@robertoperuzzo.it
 copyright_name: Roberto Peruzzo
@@ -19,6 +20,9 @@ slideshare_username: robertoperuzzo
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
 google_tracking_id: UA-5332217-14
+
+# Disqus post comments
+disqus_website: http-robertoperuzzo-it
 
 # Build settings
 markdown: kramdown
