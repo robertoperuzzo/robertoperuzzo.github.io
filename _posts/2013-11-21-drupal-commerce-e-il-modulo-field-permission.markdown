@@ -5,7 +5,7 @@ subtitle:   "Il problema dei locked fields"
 date:       2013-11-21 12:00:00
 author:     "Roberto Peruzzo"
 header-img: "img/2013-11-21/fields_permission.jpg"
-tags:       drupal drupalcommerce field_permission
+tags:       drupal7 drupalcommerce field_permission
 ---
 
 <p>Oggi ho scoperto che in <a href="https://www.drupal.org/project/commerce" target="_blank">Drupal Commerce</a>

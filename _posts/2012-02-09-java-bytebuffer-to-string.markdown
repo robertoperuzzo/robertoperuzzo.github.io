@@ -6,6 +6,7 @@ date:       2012-02-09 13:45:00
 author:     "Roberto Peruzzo"
 tags:       java aws dynamodb amazon bytebuffer
 comments:   true
+disqus_identifier: "2012-02-09-java-bytebuffer-to-string"
 ---
 
 <p>Un semplice metodo per convertire un oggetto di tipo ByteBuffer in un oggetto String.</p>

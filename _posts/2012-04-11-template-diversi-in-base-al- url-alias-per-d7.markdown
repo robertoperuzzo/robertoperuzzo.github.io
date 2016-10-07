@@ -4,7 +4,7 @@ title:      "Template diversi in base al URL alias per D7"
 subtitle:   "Cosa è cambiato da Drupal 6 a Drupal 7."
 date:       2012-04-11 12:53:00
 author:     "Roberto Peruzzo"
-tags:       drupal template urlalias theme_hook_suggestions
+tags:       drupal7 drupal6 template urlalias theme_hook_suggestions
 ---
 
 <p>Questa mattina ho scoperto che Drupal 7 ha modificato il modo di gestire il

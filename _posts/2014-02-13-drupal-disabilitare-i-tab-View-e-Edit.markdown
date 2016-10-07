@@ -4,7 +4,7 @@ title:      "Drupal: disabilitare i tab Anteprima e Modifica"
 subtitle:   "Impostare callback personalizzate tramite hook_menu_alter."
 date:       2014-02-13 17:00:00
 author:     "Roberto Peruzzo"
-tags:       drupal hook_menu_alter access drupalcommerce
+tags:       drupal7 hook_menu_alter access drupalcommerce
 ---
 
 <p>Nel progetto che stiamo realizzando con Drupal Commerce mi si è posto
