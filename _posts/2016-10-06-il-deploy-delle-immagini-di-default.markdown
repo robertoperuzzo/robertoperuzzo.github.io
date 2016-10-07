@@ -110,6 +110,14 @@ tags:       drupal7 deployment hook_update_N default_image_ft
 </pre>
 
 <h3>Il codice completo da inserire nel file .install</h3>
+<blockquote>
+  Sostituisci i segnaposto:
+  <ul>
+    <li>MY_MODULE_NAME, con il nome del tuo modulo;</li>
+    <li>my_default_image_variable, con il nome della tua variabile;</li>
+    <li>my_default_image.jpg, con il nome della tua immagine.</li>
+  </ul>
+</blockquote>
 <pre>
   <code>
     /**
