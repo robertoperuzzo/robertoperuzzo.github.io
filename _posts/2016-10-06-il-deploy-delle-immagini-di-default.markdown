@@ -63,8 +63,8 @@ tags:       drupal7 deployment hook_update_N default_image_ft
   <a href="https://api.drupal.org/api/drupal/includes!file.inc/group/file/7.x" target="_blank" title="File interface">
   in questa pagina</a> per l'immagine sorgente. Qui di seguito trovate il frammento di codice.
 </p>
-<pre>
-  <code>
+
+```php
     // Create the surce file.
     $file = new stdClass;
     $file->filename = $filename;
@@ -73,8 +73,7 @@ tags:       drupal7 deployment hook_update_N default_image_ft
     $file->filemime = file_get_mimetype($source);
     $file->uid = 1;
     $file->status = 1;
-  </code>
-</pre>
+```
 
 <h3>Copia il file</h3>
 <p>In Drupal esiste la funzione
