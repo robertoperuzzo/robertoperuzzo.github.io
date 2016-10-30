@@ -252,6 +252,6 @@ function _mt_command_setup($thread_id, $limit, $offset) {
 </p>
 <p>
   Nel <a href="https://github.com/robertoperuzzo/drush-multithread-update-alias" target="_blank" title="Drush Multi-Thread path alias update">mio repository GitHub</a> potete trovare il codice completo.
-  Se avete suggerimenti da darmi <a href="{{ '/contattami' | prepend: site.baseurl }}">contattatemi</a>,
-  sarò felice di discuterne assieme.
+  Sono certo che si può far ancora meglio per velocizzare la procedura che ho
+  descritto qui sopra, quindi se avete suggerimenti da darmi <a href="{{ '/contattami' | prepend: site.baseurl }}">contattatemi</a>, sarò felice di discuterne assieme.
 </p>
