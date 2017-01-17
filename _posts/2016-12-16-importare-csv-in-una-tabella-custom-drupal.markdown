@@ -1,7 +1,7 @@
 ---
 layout:   post
 title:    "Immagazzinare un file CSV nel database di Drupal"
-subtitle: "Come importare i dati di un file CSV dentro ad una tabella custom in Drupal."
+subtitle: "Come importare i dati di un file CSV dentro ad una tabella custom di Drupal."
 date:     2016-12-16 13:11:00
 author:   "Roberto Peruzzo"
 tags:     drupal7, csv, importing
