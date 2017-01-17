@@ -9,15 +9,23 @@ comments: true
 ---
 
 <p>
-  In questo post vedremo come prendere i dati da un file CSV e salvarli dentro
-  una tabella creata ad-hoc utilizzando lo statement MySQL <code>LOAD DATA INFILE</code>.
+  In questo post vedremo come prendere i dati da un file <em>CSV</em> e salvarli dentro
+  una tabella creata ad-hoc all'interno del database della nostra <em>web application</em>
+  fatta in <strong>Drupal</strong>. Per la lettura e l'importazione dei dati utilizzando lo
+  <em>statement MySQL</em> <code>LOAD DATA INFILE</code> che ci permette di fare tutto in un colpo solo.
 </p>
 <p>
-  Non ho scelto di utilizzare uno tra metodi più conosciuti come <a href="https://www.drupal.org/project/feed_import">Feeds Import</a> o <a href="https://www.drupal.org/project/migrate">Migrate</a>
-  perché non devo importare delle entità Drupal (content, user, taxonomy, files, ...),
-  ma un sacco di dati su cui eseguire solamente dei calcoli. Trattandosi di file
-  CSV piuttosto grossi (~80MB) con migliaia di righe, ho preferito utilizzare
-  una mia tabella con la struttura più adatta a:
+  In questo mio caso non devo importare delle
+  <a href="https://www.drupal.org/docs/7/api/entity-api/an-introduction-to-entities">
+  <em>entità di Drupal</em></a>, come
+  ad esempio contenuti (node), utenti, tassonomie o file, ma un sacco di dati
+  su da elaborare per poi utilizzarli per la costruzione di alcuni grafici
+  riepilogativi. Quindi non ho scelto di utilizzare uno tra metodi classici
+  per importare contenuti in Drupal, come
+  <a href="https://www.drupal.org/project/feed_import"><em>Feeds Import</em></a> o
+  <a href="https://www.drupal.org/project/migrate"><em>Migrate</em></a>.
+  Trattandosi inoltre di file CSV piuttosto grossi (~80MB) con migliaia di righe,
+  ho preferito utilizzare una mia tabella con la struttura più adatta a:
 </p>
 <ul>
   <li>
@@ -30,7 +38,7 @@ comments: true
     <strong>velocizzare il recupero dei dati</strong>, ottimizzando la tabella
     con chiavi e indici personalizzati. Nel caso avessi deciso invece di
     definire un mio <a href="https://www.drupal.org/docs/7/api/entity-api/an-introduction-to-entities">
-    Bundle</a>, mi sarei trovato ad avere 44 tabelle del tipo <code>field_data_field_*</code>
+    <em>Bundle</em></a>, mi sarei trovato ad avere 44 tabelle del tipo <code>field_data_field_*</code>
     ogniuna relativa ad una colonna del file CSV e messa in relazione con la
     tabella <code>node</code>, aumentando così la complessità della query SQL
     per recuperare una serie di dati.
@@ -41,20 +49,22 @@ comments: true
 
 <h2 class="section-heading">Creazione del modulo</h2>
 <p>
-  Per prima cosa bisogna <a href="https://www.drupal.org/docs/7/creating-custom-modules">
-  crearsi il proprio modulo</a>. Per velocizzare questo passaggio potete
-  clonarvi il mio <a href="https://github.com/robertoperuzzo/drupal7_base_module">repository di GitHub</a>.
+  Per prima mi sono creato il mio modulo. Per chi non l'avesse mai fatto può
+  seguire l'utile guida <a href="https://www.drupal.org/docs/7/creating-custom-modules">
+  <em>Creating custom modules</em></a>. Per velocizzare questo passaggio potete
+  utilizzare il codice che mi son preparato nel mio <a href="https://github.com/robertoperuzzo/drupal7_base_module">repository di GitHub</a>.
   Una volta che ve lo siete clonato, dategli il nome che più preferite.
   Nel mio caso l'ho chiamato <code>import_csv_data</code>.
 </p>
 
 <h2 class="section-heading">Definizione della tabella</h2>
 <p>
-  La prima cosa che dobbiamo fare ora è di definire lo schema della nostra
-  tabella. Per farlo utilizzeremo il "gancio"
+  Ora che abbiamo il nostro <em>custom module</em> pronto, possiamo definire lo schema
+  della nostra tabella in cui andremo a salvare i dati presenti nel file CSV.
+  Per farlo utilizzeremo il <em>gancio</em>
   <a href="https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_schema/7.x">
     <code>hook_schema()</code></a> e lo inserisco nel mio file <code>import_csv_data.install</code>.
-  Questo hook permette di creare la tabella alla prima installazione del modulo
+  Questo <em>hook</em> permette di creare la tabella alla prima installazione del modulo
   e di eliminarla quando verrà disinstallato. Lo schema della tabella viene
   definito da un array associativo simile al seguente:
 </p>
@@ -105,8 +115,8 @@ comments: true
   <code>$schema['import_csv_data']</code>; solitamente viene utilizzato
   lo stesso nome del modulo che la definisce.
   Allo stesso modo, anche il nome dei campi è definito dal nome dell'indice
-  utilizzato nell'array; ad esempio per definire il campo di tipo <i>float</i>
-  con nome <i>ch1slm_p1a_lapeakthdb</i> basterà scrivere il seguente array
+  utilizzato nell'array; ad esempio per definire il campo di tipo <code>float</code>
+  con nome <code>ch1slm_p1a_lapeakthdb</code> basterà scrivere il seguente array
 </p>
 <pre>
   $schema['import_csv_data']['fields']['ch1slm_p1a_lapeakthdb'] = array(
@@ -132,14 +142,19 @@ comments: true
 <p>
   Per farvi capire meglio di cosa sto parlando, vi mostro come appare il mio
   file csv.
+</p>
+<p>
   <img src="{{ site.baseurl }}/img/2016-12-16/csv_file.png" alt="Immagine contenuto del file csv">
+  <span class="caption text-muted">Frammento del file CSV da importare.</span>
+</p>
+<p>
   Come potete vedere le celle con i dati da utilizzare sono leggermente
-  spostati rispetto la cella iniziale in alto a sinistra (A:A); quindi dobbiamo
-  dire alla query SQL dove esattamente da quale riga iniziare a leggere e
+  spostati rispetto la cella iniziale in alto a sinistra (A1); quindi dobbiamo
+  dire alla query SQL esattamente da quale riga iniziare a leggere e
   quali sono le colonne da utilizzare.
 </p>
 <p>
-  Con l'opzione <code>IGNORE</code> <i>number</i> <code>LINES</code> identifichiamo
+  Grazie all'opzione <code>IGNORE</code> <i>number</i> <code>LINES</code> identifichiamo
   quante righe possiamo ignorare dall'inizio del file prima di incontrare
   i dati utili. Nel nostro caso ne dobbiamo saltare 7, come si può vedere nel
   frammento di codice qui sotto.
@@ -176,8 +191,8 @@ comments: true
     </a>
   </em> (volgarmente detti anche <em>content-type</em>) di nome <em>Rilevazione</em>
   con un campo di tipo file dove carico il file CSV "zippato".
-  Ogni volta che salvo/aggiorno un'istanza di <em>Rilevazione</em> importo i
-  dati dal file CSV nella mia tabella. Ecco di seguto la mia implementazione
+  Ogni volta che salvo/aggiorno un'istanza di <em>Rilevazione</em>, importo i
+  dati dal file CSV nella mia tabella. Ecco di seguito la mia implementazione
   del <em>gancio</em> <a href="https://api.drupal.org/api/drupal/modules%21node%21node.api.php/function/hook_node_update/7.x">hook_node_update()</a>.
 </p>
 <pre>
@@ -237,12 +252,13 @@ comments: true
     </a>
   </code>, ma ho utilizzato un nuovo oggetto <code>PDO</code>. Questa scelta
   è legata al fatto che l'utilizzo delle variabili SQL <code>(@col1,@col2,@col3,@col4,@col5)</code>
-  nella query SQL, va in conflitto con la possibilità di utilizzare argomenti
-  nella funzione <code>db_query()</code> come in questo semplice esempio:
+  nella query, si crea un conflitto tra queste variabili legate allo <em>statement</em>
+  <code>LOAD DATA INFILE</code> e gli eventuali definizione di argomenti
+  nella funzione <code>db_query()</code>, come in questo semplice esempio:
   <pre>
-      $node_title = db_query(
-        'SELECT title FROM {node} WHERE nid = @nid',
-        array('@nid' => $nid))->fetchField();
+    $node_title = db_query(
+      'SELECT title FROM {node} WHERE nid = @nid',
+      array('@nid' => $nid))->fetchField();
   </pre>
 </p>
 <p>Ecco la definizione completa della funzione.</p>
@@ -278,3 +294,8 @@ comments: true
     return $result;
   }
 </pre>
+<p>
+  Questo è tutto. Non esitate ad aggiungere il vostro commento qui sotto nel caso
+  abbiate curiosità da chiedere, dirmi il vostro punto di vista o fornirmi
+  altre soluzioni.
+</p>
