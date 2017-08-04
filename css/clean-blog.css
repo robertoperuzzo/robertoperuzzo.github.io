@@ -1,6 +1,6 @@
 /*!
  * Clean Blog v1.0.0 (http://startbootstrap.com)
- * Copyright 2016 Start Bootstrap
+ * Copyright 2017 Start Bootstrap
  * Licensed under MIT (https://spdx.org/licenses/MIT)
  */
 
@@ -14,6 +14,9 @@ p {
   margin: 30px 0;
 }
 p a {
+  text-decoration: underline;
+}
+ul a {
   text-decoration: underline;
 }
 h1,
