@@ -12,5 +12,5 @@ comments: true
   In questa prima settimana di Luglio sono volato a Lisbona per partecipare ai Drupal Dev Days, uno degli eventi europei più interessanti per chi come me lavora con <a href="https://www.drupal.org" target="_blank">Drupal</a>. Quest'anno ho avuto il piacere di poter partecipare come speaker per poter condividere alcune mie idee su come risolvere i problemi legati all'inserimento di un nuovo sviluppatore all'interno di un team di lavoro.
 </p>
 <p>
-  Nonostante il mio inglese "traballante" e l'agitazione (si tratta della mia prima esperienza in ambito internazionale), ecco il <a href="https://bit.ly/2KyoK2m" target="_blank">video del mio talk</a>.
+  Nonostante il mio inglese "traballante" e l'agitazione (si tratta della mia prima esperienza in ambito internazionale), se volete vedere il video entrate in <a href="https://bit.ly/2MQ4fLB" target="_blank">questa pagina</a> con la lista di tutti i talk e cercare il mio tramite il modulo di ricerca in alto scrivendo il titlo "Welcome aboard the team". Lo so, non è user friendly, ma i Portoghesi son così ;).
 </p>
