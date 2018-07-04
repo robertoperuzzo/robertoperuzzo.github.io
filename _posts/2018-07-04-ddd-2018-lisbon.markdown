@@ -1,7 +1,7 @@
 ---
 layout:   post
 title:    "Drupal Dev Days 2018"
-subtitle: "Ecco la presentazion che mi ha portato a Lisbona."
+subtitle: "Ecco la presentazione che mi ha portato a Lisbona."
 date:     2018-07-04 17:11:00
 author:   "Roberto Peruzzo"
 tags:     drupal, docker, docker4drupal, robo.li
