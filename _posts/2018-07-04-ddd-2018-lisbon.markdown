@@ -1,0 +1,16 @@
+---
+layout:   post
+title:    "Drupal Dev Days 2018"
+subtitle: "Ecco la presentazion che mi ha portato a Lisbona."
+date:     2018-07-04 17:11:00
+author:   "Roberto Peruzzo"
+tags:     drupal, docker, docker4drupal, robo.li
+comments: true
+---
+
+<p>
+  In questa prima settimana di Luglio sono volato a Lisbona per partecipare ai Drupal Dev Days, uno degli eventi europei più interessanti per chi come me lavora con <a href="https://www.drupal.org" target="_blank">Drupal</a>. Quest'anno ho avuto il piacere di poter partecipare come speaker per poter condividere alcune mie idee su come risolvere i problemi legati all'inserimento di un nuovo sviluppatore all'interno di un team di lavoro.
+</p>
+<p>
+  Nonostante il mio inglese "traballante" e l'agitazione (si tratta della mia prima esperienza in ambito internazionale), ecco il <a href="https://bit.ly/2KyoK2m" target="_blank">video del mio talk</a>.
+</p>
